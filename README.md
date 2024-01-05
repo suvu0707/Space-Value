@@ -7,7 +7,7 @@ Before you begin, ensure you have the following installed on your machine:
     1. Clone the repository to your local machine:
             => git clone https://github.com/suvu0707/Space-Value
     2. Navigate to the project directory:
-            => cd SpaceVue-Dashboard
+            => cd SpaceValue
     3. Install the project dependencies:
             => npm install
 ## Usage
