@@ -5,7 +5,7 @@ Before you begin, ensure you have the following installed on your machine:
 
 ## Installation
     1. Clone the repository to your local machine:
-            => git clone https://github.com/your-username/SpaceVue-Dashboard.git
+            => git clone https://github.com/suvu0707/Space-Value
     2. Navigate to the project directory:
             => cd SpaceVue-Dashboard
     3. Install the project dependencies:
