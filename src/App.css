@@ -1,0 +1,121 @@
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-container {
+  background-color: #f8f8f8;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-input {
+  margin: 8px 0;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.login-button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.login-button:hover {
+  background-color: #45a049;
+}
+
+/* App.css (or a new CSS file for your dashboard styles) */
+
+.dashboard-container {
+  background-color: #f8f8f8;
+  /* Light background color */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-title {
+  color: #4285f4;
+  /* Google Blue */
+  margin-bottom: 10px;
+}
+
+.logout-button {
+  background-color: #db4437;
+  /* Google Red */
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #c41807;
+    /* Darker Red */
+  }
+}
+
+/* Styling for the ag-grid */
+.ag-theme-alpine {
+  background-color: #fff;
+  /* White background */
+  border: 1px solid #ddd;
+  /* Light border */
+  border-radius: 5px;
+}
+
+/* Styling for the PieChart */
+.PieChart {
+  text-align: center;
+  background-color: #fff;
+  /* White background */
+  border: 1px solid #ddd;
+  /* Light border */
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for the Error Message */
+.error-message {
+  color: #c41807;
+  /* Darker Red */
+  font-size: 16px;
+  text-align: center;
+}
+
+/* Animation for the PieChart labels */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.PieChart text {
+  animation: fadeIn 0.8s ease;
+}
