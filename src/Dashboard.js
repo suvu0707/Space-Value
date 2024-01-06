@@ -4,7 +4,15 @@ import 'ag-grid-community/styles/ag-grid.css';
 import 'ag-grid-community/styles/ag-theme-alpine.css';
 import { PieChart, Pie, Cell } from 'recharts';
 import { useNavigate } from 'react-router-dom';
-import './App.css'; 
+import './App.css';
+import PropTypes from 'prop-types';
+
+/**
+ * Dashboard component to display space mission data.
+ * @param {Object} props - Component props.
+ * @param {boolean} props.isLoggedIn - Indicates whether the user is logged in.
+ * @param {Function} props.setLoggedIn - Function to set the login status.
+ */
 
 const Dashboard = ({ isLoggedIn, setLoggedIn }) => {
     const [rowData, setRowData] = useState([]);
@@ -12,12 +20,10 @@ const Dashboard = ({ isLoggedIn, setLoggedIn }) => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        // Mock API fetching with static data
         fetch('https://www.ag-grid.com/example-assets/space-mission-data.json')
             .then((response) => response.json())
             .then((data) => setRowData(data));
 
-        // Retrieve username from localStorage if available (assuming it's set during login)
         const storedUsername = localStorage.getItem('username');
         if (storedUsername) {
             setUsername(storedUsername);
@@ -25,14 +31,11 @@ const Dashboard = ({ isLoggedIn, setLoggedIn }) => {
     }, []);
 
     const handleLogout = () => {
-        // Clear the username and setLoggedIn to false
         setUsername('');
         setLoggedIn(false);
 
-        // Remove the username from localStorage
         localStorage.removeItem('username');
 
-        // Navigate back to the login page
         navigate('/login');
     };
 
@@ -74,7 +77,7 @@ const Dashboard = ({ isLoggedIn, setLoggedIn }) => {
     const pieChartHeight = 500;
 
     return (
-        <div className="dashboard-container">
+        <div data-testid="dashboard" className="dashboard-container">
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <h2 className="dashboard-title">SpaceVue Dashboard</h2>
                 <div style={{ display: 'flex', alignItems: 'center' }}>
@@ -87,7 +90,7 @@ const Dashboard = ({ isLoggedIn, setLoggedIn }) => {
             {isLoggedIn ? (
                 <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                     <div className="ag-theme-alpine" style={{ height: '550px', width: '60%', marginBottom: '20px' }}>
-                        <AgGridReact columnDefs={columnDefs} rowData={rowData} />
+                        <AgGridReact  columnDefs={columnDefs} rowData={rowData} />
                     </div>
                     <div style={{ textAlign: 'center' }}>
                         <h3>PieChart Title</h3>
@@ -105,6 +108,11 @@ const Dashboard = ({ isLoggedIn, setLoggedIn }) => {
             )}
         </div>
     );
+};
+
+Dashboard.propTypes = {
+    isLoggedIn: PropTypes.bool.isRequired,
+    setLoggedIn: PropTypes.func.isRequired,
 };
 
 export default Dashboard;
