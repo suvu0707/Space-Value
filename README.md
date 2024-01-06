@@ -19,3 +19,6 @@ Before you begin, ensure you have the following installed on your machine:
             => Username: demo
             => Password: password
     5. Explore the dashboard, view space mission data, and log out when finished.
+
+## Run test case
+    npm test
